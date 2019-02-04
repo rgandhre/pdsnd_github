@@ -338,6 +338,12 @@ def main():
        If file for the specific city is not available prints error message
        else calls the respective functions
 
+   Functions Called:
+       time_stats(df)
+       station_stats(df)
+       trip_duration_stats(df)
+       user_stats(df)
+       print_data(df)
 
     """
     while True:

@@ -49,3 +49,4 @@ _Data Files_
 
 _Helpful Resources:_
 * [Writing README file](https://www.udacity.com/course/writing-readmes--ud777)
+* [GitHub flavored Markdown](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
