@@ -333,7 +333,7 @@ def main():
         df = load_data(city, month, day)
 
         #Check if the DataFrame contains data for the specified city, month and day
-        
+
         if df.empty:
             print('There is no data for combination of city: {}, month: {}, day: {}'.format(city,month,day))
         else:
