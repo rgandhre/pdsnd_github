@@ -328,6 +328,18 @@ def print_data(df):
 
 
 def main():
+
+    """ The main function of the project
+
+        Gets input from the user and loads the panda dataframe
+
+    Validations:
+
+       If file for the specific city is not available prints error message
+       else calls the respective functions
+
+
+    """
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
