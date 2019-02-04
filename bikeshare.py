@@ -30,9 +30,9 @@ def get_filters():
          -If wrong day of the week is entered, error is prompted to enter valid day of the week until correct city is entered
 
     """
-    print()
-    print('Hello! Let\'s explore some US bikeshare data!')
-    print()
+
+    print('\nHello! Let\'s explore some US bikeshare data!\n')
+
 
     while True:
         # get user input for city (chicago, new york city, washington).
@@ -44,16 +44,14 @@ def get_filters():
                 print('Please enter valid city. Chicago or New York City or Washington\n')
             else:
                 break
-        except ValuError:
+        except ValueError:
             print('Value Error')
         except KeyboardInterrupt:
-            print("Pressed Control key")
+            print('Pressed Control key')
             break
 
     #return the city entered after converting it to lower case and stripping before and after whitespaces
     city = city.lower().lstrip().rstrip()
-
-
 
     while True:
 
@@ -67,10 +65,10 @@ def get_filters():
                 print('Please enter valid month OR all for no month filter\n')
             else:
                 break
-        except ValuError:
+        except ValueError:
             print('Value Error')
         except KeyboardInterrupt:
-            print("Pressed Control key")
+            print('Pressed Control key')
             break
 
     #return the month entered after converting it to lower case and stripping before and after whitespaces
@@ -87,10 +85,10 @@ def get_filters():
                 print('Please enter valid day of the week or all for no day filter\n')
             else:
                 break
-        except ValuError:
+        except ValueError:
             print('Value Error')
         except KeyboardInterrupt:
-            print("Pressed Control key")
+            print('Pressed Control key')
 
     #return the day of the week entered after converting it to lower case and stripping before and after whitespaces
     day = day.lower().lstrip().rstrip()
@@ -152,18 +150,18 @@ def time_stats(df):
     common_month = (df['month']).mode()[0]
     months = ['January','February','March','April','May','June']
 
-    print("\nThe most common month of travel is:", months[common_month-1])
+    print('\nThe most common month of travel is:', months[common_month-1])
 
     # display the most common day of week
     common_day = (df['day']).mode()[0]
-    print("\nThe most common day of week for travel is:", common_day)
+    print('\nThe most common day of week for travel is:', common_day)
 
     # display the most common start hour
     common_hour = (df['Start Time'].dt.hour).mode()[0]
     print('\nThe most common start hour for travel is: {} hours'.format(common_hour))
 
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print('\nThis took %s seconds.' % (time.time() - start_time))
     print('-'*100)
 
 
@@ -185,7 +183,7 @@ def station_stats(df):
 
     # display most commonly used end station
     common_end_station = (df['End Station']).mode()[0]
-    print("\nThe most common end station of travel is:", common_end_station)
+    print('\nThe most common end station of travel is:', common_end_station)
 
     # display most frequent combination of start station and end station trip
 
@@ -209,7 +207,7 @@ def station_stats(df):
         print('\nThe minimum duration for the most common trip is:',duration_min)
 
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print('\nThis took %s seconds.' % (time.time() - start_time))
     print('-'*100)
 
 
@@ -241,7 +239,7 @@ def trip_duration_stats(df):
     print('\nThe shortest duration of all the trip is:', trip_shortest_duration)
 
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print('\nThis took %s seconds.' % (time.time() - start_time))
     print('-'*100)
 
 
@@ -292,7 +290,7 @@ def user_stats(df):
         print('\nThere is no Birth Year data.')
 
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print('\nThis took %s seconds.' % (time.time() - start_time))
     print('-'*100)
 
 def print_data(df):
